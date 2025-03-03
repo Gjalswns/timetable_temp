@@ -14,7 +14,11 @@ app.post("/capture", async (req, res) => {
     const userSettings = req.body; // ✅ 사용자 설정값 받기
 
     try {
-        const browser = await puppeteer.launch();
+        const browser = await puppeteer.launch({
+            args: ["--no-sandbox", "--disable-setuid-sandbox"],
+                headless: "new",
+                executablePath: "/usr/bin/google-chrome-stable"
+            });
         const page = await browser.newPage();
 
         // ✅ Puppeteer에서 배경을 명확하게 설정하여 색상 차이 최소화

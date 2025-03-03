@@ -1,11 +1,20 @@
 {
-  "description": "",
+  "name": "timetable-app",
+  "version": "1.0.0",
+  "description": "AWS Elastic Beanstalk을 통한 Puppeteer 기반 시간표 생성기",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "postinstall": "npm install --production"
+  },
   "dependencies": {
-    "body-parser": "^1.20.3",
-    "canvas": "^3.1.0",
-    "cors": "^2.8.5",
-    "express": "^4.21.2",
-    "puppeteer": "^24.3.0",
-    "sharp": "^0.33.5"
+    "express": "^4.17.3",
+    "puppeteer": "^21.0.0",
+    "sharp": "^0.32.1",
+    "body-parser": "^1.19.0"
+  },
+  "engines": {
+    "node": "18.x",
+    "npm": "9.x"
   }
 }
