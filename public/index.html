@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2학년 시간표</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>시간표 생성기</h1>
+    <label for="classSelect">반 선택:</label>
+    <select id="classSelect">
+        <option value="1">1반</option>
+        <option value="2">2반</option>
+        <option value="3">3반</option>
+        <option value="4">4반</option>
+        <option value="5">5반</option>
+        <option value="6">6반</option>
+        <option value="7">7반</option>
+        <option value="8">8반</option>
+        <option value="9">9반</option>
+        <option value="10">10반</option>
+        <option value="11">11반</option>
+        <option value="12">12반</option>
+    </select>
+    <div id="timetable">
+        <table>
+            <thead>
+                <tr>
+                    <th>시간</th>
+                    <th>월요일</th>
+                    <th>화요일</th>
+                    <th>수요일</th>
+                    <th>목요일</th>
+                    <th>금요일</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- 시간표 데이터가 여기에 동적으로 추가됩니다 -->
+            </tbody>
+        </table>
+    </div>
+    <div id="electiveMenu">
+        <h2>선택과목 설정</h2>
+        <div class="elective-group">
+            <h3>K, L, M, N 타임</h3>
+            <div>
+                <label for="K선택">K선택:</label>
+                <select id="K선택">
+                    <option value="K선택">K선택</option>
+                    <option value="문매">문매</option>
+                    <option value="기하">기하</option>
+                    <option value="영문">영문</option>
+                </select>
+            </div>
+            <div>
+                <label for="L선택">L선택:</label>
+                <select id="L선택">
+                    <option value="L선택">L선택</option>
+                    <option value="문매">문매</option>
+                    <option value="기하">기하</option>
+                    <option value="영문">영문</option>
+                </select>
+            </div>
+            <div>
+                <label for="M선택">M선택:</label>
+                <select id="M선택">
+                    <option value="M선택">M선택</option>
+                    <option value="문매">문매</option>
+                    <option value="기하">기하</option>
+                    <option value="영문">영문</option>
+                </select>
+            </div>
+            <div>
+                <label for="N선택">N선택:</label>
+                <select id="N선택">
+                    <option value="N선택">N선택</option>
+                    <option value="문매">문매</option>
+                    <option value="기하">기하</option>
+                    <option value="영문">영문</option>
+                </select>
+            </div>
+        </div>
+        <div class="elective-group">
+            <h3>I, H, J 타임</h3>
+            <div>
+                <label for="I선택">I선택:</label>
+                <select id="I선택">
+                    <option value="I선택">I선택</option>
+                    <option value="세계지리">세계지리</option>
+                    <option value="경제">경제</option>
+                    <option value="정치와법">정치와법</option>
+                    <option value="동아시아사">동아시아사</option>
+                    <option value="생활과윤리">생활과 윤리</option>
+                    <option value="물리학Ⅰ">물리학Ⅰ</option>
+                    <option value="화학Ⅰ">화학Ⅰ</option>
+                    <option value="지구과학Ⅰ">지구과학Ⅰ</option>
+                    <option value="생명과학Ⅰ">생명과학Ⅰ</option>
+                    <option value="생명과학실험">과학과제연구-생명과학실험</option>
+                    <option value="물리학실험">과학과제연구-물리학실험</option>
+                    <option value="화학실험">과학과제연구-화학실험</option>
+                    <option value="지식재산일반">지식재산일반</option>
+                    <option value="음악사">음악사</option>
+                    <option value="인공지능기초">인공지능 기초</option>
+                </select>
+            </div>
+            <div>
+                <label for="H선택">H선택:</label>
+                <select id="H선택">
+                    <option value="H선택">H선택</option>
+                    <option value="세계지리">세계지리</option>
+                    <option value="경제">경제</option>
+                    <option value="정치와법">정치와법</option>
+                    <option value="동아시아사">동아시아사</option>
+                    <option value="생활과윤리">생활과 윤리</option>
+                    <option value="물리학Ⅰ">물리학Ⅰ</option>
+                    <option value="화학Ⅰ">화학Ⅰ</option>
+                    <option value="지구과학Ⅰ">지구과학Ⅰ</option>
+                    <option value="생명과학Ⅰ">생명과학Ⅰ</option>
+                    <option value="생명과학실험">과학과제연구-생명과학실험</option>
+                    <option value="물리학실험">과학과제연구-물리학실험</option>
+                    <option value="화학실험">과학과제연구-화학실험</option>
+                    <option value="지식재산일반">지식재산일반</option>
+                    <option value="음악사">음악사</option>
+                    <option value="인공지능기초">인공지능 기초</option>
+                </select>
+            </div>
+            <div>
+                <label for="J선택">J선택:</label>
+                <select id="J선택">
+                    <option value="J선택">J선택</option>
+                    <option value="세계지리">세계지리</option>
+                    <option value="경제">경제</option>
+                    <option value="정치와법">정치와법</option>
+                    <option value="동아시아사">동아시아사</option>
+                    <option value="생활과윤리">생활과 윤리</option>
+                    <option value="물리학Ⅰ">물리학Ⅰ</option>
+                    <option value="화학Ⅰ">화학Ⅰ</option>
+                    <option value="지구과학Ⅰ">지구과학Ⅰ</option>
+                    <option value="생명과학Ⅰ">생명과학Ⅰ</option>
+                    <option value="생명과학실험">과학과제연구-생명과학실험</option>
+                    <option value="물리학실험">과학과제연구-물리학실험</option>
+                    <option value="화학실험">과학과제연구-화학실험</option>
+                    <option value="지식재산일반">지식재산일반</option>
+                    <option value="음악사">음악사</option>
+                    <option value="인공지능기초">인공지능 기초</option>
+                </select>
+            </div>
+        </div>
+        <div class="elective-group">
+            <h3>언어</h3>
+            <div>
+                <label for="언어선택">언어 선택:</label>
+                <select id="언어선택">
+                    <option value="스페인어">스페인어</option>
+                    <option value="중국어">중국어</option>
+                    <option value="한문">한문</option>
+                </select>
+            </div>
+        </div>
+        <div class="elective-group">
+            <h3>사문/생과</h3>
+            <div>
+                <label for="사문생과선택">사문/생과 선택:</label>
+                <select id="사문생과선택">
+                    <option value="사회문제탐구">사회문제탐구</option>
+                    <option value="생활과과학">생활과과학</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <button id="downloadBtn">시간표 이미지로 저장</button>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
