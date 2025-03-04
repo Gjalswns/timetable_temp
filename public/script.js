@@ -183,6 +183,8 @@ document.querySelectorAll("#electiveMenu select").forEach(select => {
 
 // ✅ **다운로드 버튼 클릭 이벤트 (선택과목 반영)**
 document.getElementById("downloadBtn").addEventListener("click", async () => {
+    alert("이미지가 3초 후에 다운로드됩니다.\n인공지능부 많은 관심 부탁드립니다.")
+    
     const userSettings = {
         classSelect: document.getElementById("classSelect").value,
         K선택: document.getElementById("K선택").value,
@@ -222,3 +224,23 @@ document.getElementById("downloadBtn").addEventListener("click", async () => {
 window.onload = () => {
     createTimetable(1);
 };
+
+const copyBtn = document.getElementById("copy");
+
+copyBtn.addEventListener("click", () => {
+  // 최신 브라우저에서 지원하는 Clipboard API 사용
+  // writeText로 간단히 텍스트를 복사할 수 있습니다.
+    navigator.clipboard.writeText("토스뱅크 1908-8747-1073")
+    .then(() => {
+        alert("계좌번호가 복사되었습니다!");
+    })
+    .catch((err) => {
+        console.error("복사 중 오류가 발생했습니다.", err);
+    });
+});
+
+
+
+
+
+

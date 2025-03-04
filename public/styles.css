@@ -1,6 +1,7 @@
-/* 뉴모피즘 디자인을 위한 기본 스타일 */
+
+
 body {
-    font-family: 'Apple SD Gothic Neo', sans-serif;  /*Apple SD Gothic Neo */
+    font-family: 'Noto Sans KR', sans-serif;  /*Apple SD Gothic Neo */
     background-color: #e0e5ec; /* 뉴모피즘 배경색 */
     color: #333;
     text-align: center;

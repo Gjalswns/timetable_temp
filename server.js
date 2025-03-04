@@ -4,6 +4,7 @@ const path = require("path");
 const sharp = require("sharp");
 const bodyParser = require("body-parser");
 const { prototype } = require("events");
+const fs = require("fs");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -71,11 +72,11 @@ app.post("/capture", async (req, res) => {
         });
 
         // ✅ 위아래 여백 추가 및 배경색을 동일하게 설정
-        const paddingSize = 1000;
+        const paddingSize = 2000;
         await sharp(screenshotPath)
             .extend({
-                top: paddingSize,
-                bottom: paddingSize,
+                top: paddingSize+1500,
+                bottom: paddingSize+1500,
                 left: paddingSize,
                 right: paddingSize,
                 background: { r: 224, g: 229, b: 236 } // ✅ 배경색 #e0e5ec 유지
@@ -83,17 +84,26 @@ app.post("/capture", async (req, res) => {
             .toFile(finalImagePath);
 
         await browser.close();
-        res.download(finalImagePath);
+
+        res.download(finalImagePath, () => {
+            console.log("✅ 이미지 다운로드 완료");
+            try {
+                if (fs.existsSync(screenshotPath)) fs.unlinkSync(screenshotPath);
+                if (fs.existsSync(finalImagePath)) fs.unlinkSync(finalImagePath);
+                console.log("✅ 임시 파일 삭제 완료");
+            } catch (err) {
+                console.error("❌ 파일 삭제 오류:", err);
+            }
+        });
+
+
     } catch (error) {
         console.error("이미지 저장 오류:", error);
         res.status(500).send("이미지 생성 실패");
     }
 });
 
-// app.listen(PORT, () => {
-//     console.log(`서버 실행: http://localhost:${PORT}`);
-// });
-
-app.listen(PORT, "0.0.0.0", () =>{
-    console.log("서버 실행중: http://0.0.0.0:${PORT}");
+app.listen(PORT, () => {
+    console.log(`서버 실행: http://localhost:${PORT}`);
 });
+
