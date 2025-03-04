@@ -6,7 +6,8 @@ const bodyParser = require("body-parser");
 const { prototype } = require("events");
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
+
 
 app.use(express.static("public"));
 app.use(bodyParser.json()); // ✅ JSON 데이터 파싱 추가
