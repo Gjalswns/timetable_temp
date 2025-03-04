@@ -3,6 +3,7 @@ const puppeteer = require("puppeteer");
 const path = require("path");
 const sharp = require("sharp");
 const bodyParser = require("body-parser");
+const { prototype } = require("events");
 
 const app = express();
 const PORT = 3000;
@@ -14,11 +15,11 @@ app.post("/capture", async (req, res) => {
     const userSettings = req.body; // ✅ 사용자 설정값 받기
 
     try {
-        const browser = await puppeteer.launch({
-            args: ["--no-sandbox", "--disable-setuid-sandbox"],
-                headless: "new",
-                executablePath: "/usr/bin/google-chrome-stable"
-            });
+        const browser = await puppeteer.launch(
+            {args: ["--no-sandbox", "--disable-setuid-sandbox"],
+            headless: "new"
+            }
+        );
         const page = await browser.newPage();
 
         // ✅ Puppeteer에서 배경을 명확하게 설정하여 색상 차이 최소화
@@ -88,6 +89,10 @@ app.post("/capture", async (req, res) => {
     }
 });
 
-app.listen(PORT, () => {
-    console.log(`서버 실행: http://localhost:${PORT}`);
+// app.listen(PORT, () => {
+//     console.log(`서버 실행: http://localhost:${PORT}`);
+// });
+
+app.listen(PORT, "0.0.0.0", () =>{
+    console.log("서버 실행중: http://0.0.0.0:${PORT}");
 });

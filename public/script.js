@@ -125,6 +125,7 @@ const colors = {
     "L선택": "#CC99FF",  // L선택 그룹 기본 색상
     "M선택": "#FF9966",  // M선택 그룹 기본 색상
     "N선택": "#99CC99",  // N선택 그룹 기본 색상
+    "기하": "#99CC99",
     "언어": "#FFCC99",   // 언어 그룹 기본 색상
     "사문/생과": "#CCCCFF" // 사문/생과 그룹 기본 색상
 
@@ -160,7 +161,7 @@ function createTimetable(classNumber) {
                 td.style.backgroundColor = colors["사문/생과"];
             } else { 
                 td.textContent = cell;
-                td.style.backgroundColor = colors[cell] || "#FFFFFF";
+                td.style.backgroundColor = colors[cell] || "#e0e5ec";
             }
             tr.appendChild(td);
         });
